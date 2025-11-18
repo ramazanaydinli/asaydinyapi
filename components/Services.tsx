@@ -74,51 +74,47 @@ export default function Services() {
         </div>
 
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={`bg-white p-8 rounded-3xl border transition-all duration-300 flex flex-col items-center text-center ${
-                service.isFeatured
-                  ? "border-orange-500 shadow-xl shadow-orange-100 scale-105"
-                  : "border-gray-200 hover:shadow-lg hover:border-gray-300"
-              }`}
-            >
-              {service.image ? (
-                <div
-                  className={`relative w-32 h-32 mb-6 -mt-2 group ${index === 0 ? "cursor-pointer" : ""}`}
-                  onClick={() => {
-                    // Sadece ilk kart (Fitil) tıklandığında modal açılsın
-                    if (index === 0) setModalIsOpen(true);
-                  }}
-                >
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    width={800}
-                    height={600}
-                    className="rounded-lg w-full h-full object-cover shadow-sm"
-                  />
-                  
-                  {/* Etiket (Tag) sadece 1. kartta (index 0) görünsün */}
-                  {service.isFeatured && index === 0 && (
-                    <>
-                      <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-orange-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md whitespace-nowrap z-10">
-                        {t.services.s1.tag}
-                      </div>
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/10 rounded-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg>
-                      </div>
-                    </>
-                  )}
-                </div>
-              ) : (
-                // Resim yoksa ikon göster (Şu an hepsi resimli olduğu için buraya girmeyecek ama yedek olarak dursun)
-                <div className="w-14 h-14 flex items-center justify-center rounded-full mb-6 bg-blue-100 text-blue-600">
-                  {service.icon}
-                </div>
-              )}
+  {services.map((service, index) => (
+    <div
+      key={index}
+      className={`bg-white p-8 rounded-3xl border transition-all duration-300 flex flex-col items-center text-center ${
+        service.isFeatured
+          ? "border-orange-500 shadow-xl shadow-orange-100 scale-105"
+          : "border-gray-200 hover:shadow-lg hover:border-gray-300"
+      }`}
+    >
+      {/* HATA VEREN KISIM DÜZELTİLDİ: Artık sadece resim varsa gösteriyoruz, 'else' kısmı silindi */}
+      {service.image && (
+        <div
+          className={`relative w-32 h-32 mb-6 -mt-2 group ${index === 0 ? "cursor-pointer" : ""}`}
+          onClick={() => {
+            // Sadece ilk kart (Fitil) tıklandığında modal açılsın
+            if (index === 0) setModalIsOpen(true);
+          }}
+        >
+          <Image
+            src={service.image}
+            alt={service.title}
+            width={800}
+            height={600}
+            className="rounded-lg w-full h-full object-cover shadow-sm"
+          />
+          
+          {/* Etiket (Tag) sadece 1. kartta (index 0) görünsün */}
+          {service.isFeatured && index === 0 && (
+            <>
+              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-orange-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md whitespace-nowrap z-10">
+                {t.services.s1.tag}
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/10 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                </svg>
+              </div>
+            </>
+          )}
+        </div>
+      )}
 
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 {service.title}
