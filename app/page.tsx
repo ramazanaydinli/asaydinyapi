@@ -12,26 +12,21 @@ import FloatingWhatsapp from "@/components/FloatingWhatsapp";
 import FadeIn from "@/components/FadeIn";
 import Testimonials from "@/components/Testimonials";
 
-// Dil state'ini ve prop'ları kaldırdık.
-// Tüm bileşenler artık Context API'yi doğrudan kullanacak.
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-white relative">
-      
-      {/* Header artık prop almıyor, kendi içinden context'e bağlanıyor */}
+
       <Header />
-      
+
       <Hero />
 
       <FadeIn>
         <Services />
       </FadeIn>
-      
+
       <div id="ozellikler">
         <FadeIn delay={0.2}>
-          {/* Features da prop almıyor, yukarıda düzelttik */}
-          <Features /> 
+          <Features />
         </FadeIn>
       </div>
 
@@ -42,7 +37,7 @@ export default function Home() {
       <FadeIn>
         <Testimonials />
       </FadeIn>
-      
+
       <FadeIn>
         <Contact />
       </FadeIn>

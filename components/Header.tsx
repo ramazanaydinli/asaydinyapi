@@ -3,16 +3,17 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
-  // Context'ten dil verilerini çekiyoruz
+  const router = useRouter();
+  const pathname = usePathname();
   const { language, setLanguage, t } = useLanguage();
-  
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Scroll dinleyicisi
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -21,7 +22,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Menü linklerini çeviri dosyasından (t) alıyoruz
   const navLinks = [
     { name: t.header.home, href: "#" },
     { name: t.header.services, href: "#hizmetler" },
@@ -29,28 +29,38 @@ export default function Header() {
     { name: t.header.contact, href: "#iletisim" },
   ];
 
+  // Dil değiştirme fonksiyonları - router ile sayfa yönlendirmesi
+  const switchToTurkish = () => {
+    setLanguage('tr');
+    router.push('/');
+  };
+
+  const switchToEnglish = () => {
+    setLanguage('en');
+    router.push('/en');
+  };
+
   return (
     <header
-    className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-md py-3" : "bg-transparent py-5"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md py-3" : "bg-transparent py-5"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        
-        {/* LOGO ALANI */}
-        <Link href="/" className="flex items-center gap-2 group">
-           <div className="relative w-32 h-12 md:w-40 md:h-14">
-             <Image
-               src="/logo.png" // Dosya isminin projedeki ile aynı olduğundan emin ol
-               alt="Asaydın Yapı Logo"
-               fill
-               className="object-contain"
-               priority
-             />
-           </div>
+
+        {/* LOGO */}
+        <Link href={pathname === '/en' ? '/en' : '/'} className="flex items-center gap-2 group">
+          <div className="relative w-32 h-12 md:w-40 md:h-14">
+            <Image
+              src="/logo.png"
+              alt="Asaydın Yapı Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </Link>
 
-        {/* MASAÜSTÜ MENÜ */}
+        {/* DESKTOP MENU */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
@@ -63,20 +73,20 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* SAĞ TARAF: DİL SEÇİMİ & BUTON (MASAÜSTÜ) */}
+        {/* LANGUAGE & CTA (DESKTOP) */}
         <div className="hidden md:flex items-center gap-4">
-          
-          {/* Dil Seçimi Butonları */}
+
+          {/* Language Switcher */}
           <div className="flex items-center gap-2 text-sm font-bold border-r border-gray-300 pr-4">
-            <button 
-              onClick={() => setLanguage('tr')}
+            <button
+              onClick={switchToTurkish}
               className={`${language === 'tr' ? 'text-orange-600' : 'text-gray-400'} hover:text-orange-600 transition-colors`}
             >
               TR
             </button>
             <span className="text-gray-300">|</span>
-            <button 
-              onClick={() => setLanguage('en')}
+            <button
+              onClick={switchToEnglish}
               className={`${language === 'en' ? 'text-orange-600' : 'text-gray-400'} hover:text-orange-600 transition-colors`}
             >
               EN
@@ -91,7 +101,7 @@ export default function Header() {
           </a>
         </div>
 
-        {/* MOBİL MENÜ BUTONU (Hamburger) */}
+        {/* MOBILE MENU TOGGLE */}
         <button
           className="md:hidden text-gray-800 p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -104,7 +114,7 @@ export default function Header() {
         </button>
       </div>
 
-      {/* MOBİL MENÜ AÇILIR KUTU */}
+      {/* MOBILE MENU */}
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 md:hidden flex flex-col p-6 gap-4 animate-fade-in-down">
           {navLinks.map((link) => (
@@ -117,22 +127,22 @@ export default function Header() {
               {link.name}
             </Link>
           ))}
-          
-          {/* Mobil Dil Seçimi */}
+
+          {/* Mobile Language Switcher */}
           <div className="flex items-center gap-4 pt-2 justify-center">
-             <button 
-               onClick={() => setLanguage('tr')}
-               className={`font-bold text-lg ${language === 'tr' ? 'text-orange-600' : 'text-gray-400'}`}
-             >
-               TR
-             </button>
-             <span className="text-gray-300">|</span>
-             <button 
-               onClick={() => setLanguage('en')}
-               className={`font-bold text-lg ${language === 'en' ? 'text-orange-600' : 'text-gray-400'}`}
-             >
-               EN
-             </button>
+            <button
+              onClick={switchToTurkish}
+              className={`font-bold text-lg ${language === 'tr' ? 'text-orange-600' : 'text-gray-400'}`}
+            >
+              TR
+            </button>
+            <span className="text-gray-300">|</span>
+            <button
+              onClick={switchToEnglish}
+              className={`font-bold text-lg ${language === 'en' ? 'text-orange-600' : 'text-gray-400'}`}
+            >
+              EN
+            </button>
           </div>
 
           <a href="tel:+905324130694" className="bg-orange-600 text-white text-center py-3 rounded-xl font-bold mt-2">
