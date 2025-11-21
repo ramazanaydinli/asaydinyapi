@@ -9,9 +9,21 @@ export default function FloatingWhatsapp() {
   // Mesajı URL uyumlu hale getir (boşlukları %20 yapar)
   const encodedMessage = encodeURIComponent(t.contact.whatsappPre);
 
+  // Google Ads Dönüşüm Tetikleyici Fonksiyonu
+  const handleConversion = () => {
+    // window nesnesi ve gtag fonksiyonu var mı kontrol et
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'conversion', {
+        'send_to': 'AW-17743247848/91VeCNK2scMbEOjz0YxC'
+      });
+      console.log('Google Ads WhatsApp dönüşümü gönderildi.');
+    }
+  };
+
   return (
     <a
       href={`https://wa.me/905324130694?text=${encodedMessage}`} // Dinamik mesaj
+      onClick={handleConversion} // Tıklanınca dönüşüm kodunu çalıştırır
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-[9999] bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-2xl hover:bg-[#128C7E] hover:scale-110 transition-all duration-300 flex items-center gap-2 group"
@@ -25,7 +37,7 @@ export default function FloatingWhatsapp() {
         height={32}
         className="flex-shrink-0"
       />
-      
+
       {/* Hover Yazısı */}
       <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap font-bold text-sm md:text-base">
         {t.contact.whatsapp}
