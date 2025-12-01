@@ -8,11 +8,14 @@ export const translations = {
       callBtn: "Hemen Ara",
     },
     hero: {
-      badge: "Ankara Geneli Profesyonel Tamir & İmalat",
-      titleLine1: "Eviniz Isınsın,",
-      titleLine2: "Gürültü Kesilsin!",
-      description: "Asaydın Yapı olarak, ahşap ve pimapen kapı pencerelerinizi fabrika standartlarından çok daha geniş, özel kalıp fitillerimizle yeniliyoruz. Kışın soğuğu, dışarının tozunu ve gürültüsünü tamamen kesiyoruz.",
-      btnCall: "Hemen Ara & Keşif İste",
+      // GÜNCELLENDİ: İmalat kelimesi kalktı, Servis geldi
+      badge: "Ankara Geneli Profesyonel Servis", 
+      // GÜNCELLENDİ: H1 Başlığı Tamir Odaklı Oldu
+      titleLine1: "Ankara Pimapen Tamiri",
+      titleLine2: "ve Fitil Değişimi",
+      // GÜNCELLENDİ: Açıklama SEO uyumlu hale geldi
+      description: "Asaydın Yapı olarak Ankara genelinde her marka pimapen, cam balkon ve kapı pencerelerinizin tamir ve bakımını yapıyoruz. Özel üretim geniş fitillerimiz ile soğuğu ve gürültüyü %100 kesiyoruz.",
+      btnCall: "Hemen Servis Çağır",
       btnServices: "Hizmetlerimiz",
       stats: {
         exp: "Tecrübe",
@@ -25,32 +28,32 @@ export const translations = {
         sub1: "Fabrikasyon fitilden daha geniş, %100 yalıtım.",
         item2: "Pimapen & Ahşap Tamiri",
         sub2: "Her marka kapı ve pencere ayarı.",
-        item3: "İmalat & Montaj",
-        sub3: "Sineklik, Cam Balkon, Duşakabin.",
+        // GÜNCELLENDİ: İmalat silindi, Bakım Onarım geldi
+        item3: "Bakım & Onarım Servisi",
+        sub3: "Cam Balkon ve Kapı Tamiri.",
         emergency: "ANKARA İÇİ ACİL SERVİS",
       }
     },
     services: {
-      title: "Tamir, Bakım ve İmalat Çözümleri",
+      title: "Tamir, Bakım ve Onarım Çözümleri", // İmalat silindi
       description: "Ankara'nın her yerine servis ağımızla, pencerenizden gelen soğuğu kesiyor, kapılarınızı tamir ediyor ve yaşam alanınızın konforunu artırıyoruz.",
       tag: "Hizmetlerimiz",
-      // HATA BURADAYDI: s1, s2, s3, s4 ARTIK SERVICES İÇİNDE VE AYRI AYRI TANIMLI
       s1: {
-        title: "Özel Kalıp Fitil Değişimi",
+        title: "Özel Geniş Fitil Değişimi", // Ads için optimize edildi
         description: "Fabrikasyon ince fitillerin aksine, kendi üretimimiz olan geniş ve dolgun fitillerle %100 rüzgar ve ses yalıtımı sağlıyoruz.",
         tag: "13.73mm Özel Üretim"
       },
       s2: {
-        title: "Pimapen Tamiri & Ayarı",
+        title: "Pimapen Tamiri ve Ayarı", // Ads için optimize edildi
         description: "Kapanmayan, sürtünen veya kolu bozulan tüm marka PVC pencerelerinizi ilk günkü performansına kavuşturuyoruz."
       },
       s3: {
-        title: "Ahşap Kapı & Pencere",
+        title: "Ahşap Pencere Onarımı", // Ads için optimize edildi
         description: "Eski tip ahşap doğramalarınız için özel fitil uygulaması, macunlama, kilit değişimi ve genel bakım hizmeti."
       },
       s4: {
-        title: "Sineklik, Cam Balkon & Duşakabin",
-        description: "Yırtık sineklik teli değişimi, tekerlek tamiri veya sıfırdan size özel ölçülerde imalat ve montaj."
+        title: "Cam Balkon Fitil Değişimi", // KRİTİK: Sistemleri kelimesi yerine Fitil Değişimi geldi
+        description: "Cam balkonlarınızın sararan, kırılan veya su kaçıran fitillerini şeffaf veya alüminyum fitillerle yeniliyoruz."
       },
       activeServiceBtn: "Şu an aktif olarak Ankara geneli servis vermekteyiz."
     },
@@ -143,11 +146,11 @@ export const translations = {
       callBtn: "Call Now",
     },
     hero: {
-      badge: "Professional Repair in Ankara & English Speaking Support",
-      titleLine1: "Warm Home,",
-      titleLine2: "Zero Noise!",
-      description: "As Asaydın Yapı, we renovate your wooden and PVC windows with our special wide mold seals, far superior to factory standards. We completely block cold, dust, and outside noise.",
-      btnCall: "Call Now & Get Quote",
+      badge: "Professional Service in Ankara", // Updated
+      titleLine1: "Ankara PVC Window Repair", // Updated for Ads consistency
+      titleLine2: "& Seal Replacement", // Updated
+      description: "As Asaydın Yapı, we provide professional PVC window repair service throughout Ankara. We completely block cold, dust, and outside noise with our special wide mold seals.",
+      btnCall: "Call Now for Service",
       btnServices: "Our Services",
       stats: {
         exp: "Experience",
@@ -160,32 +163,31 @@ export const translations = {
         sub1: "Wider than factory seals, 100% insulation.",
         item2: "PVC & Wood Repair",
         sub2: "Adjustment for all brands of doors/windows.",
-        item3: "Manufacturing & Assembly",
-        sub3: "Fly screens, Glass Balconies, Shower Cabins.",
+        item3: "Maintenance & Repair", // Updated
+        sub3: "Glass Balcony and Door Repair.", // Updated
         emergency: "ANKARA EMERGENCY SERVICE",
       }
     },
     services: {
-      title: "Repair, Maintenance & Manufacturing",
+      title: "Repair & Maintenance Solutions",
       description: "We cut the cold coming from your windows and repair your doors with our service network all over Ankara.",
       tag: "Our Services",
-      // İNGİLİZCE İÇİN DE s1, s2, s3, s4 YAPISI OLUŞTURULDU
       s1: {
-        title: "Custom Molded Seal Replacement",
-        description: "Unlike factory-thin seals, we provide 100% wind and sound insulation with our self-produced wide and full seals.",
+        title: "Custom Wide Seal Replacement",
+        description: "Unlike factory-thin seals, we provide 100% wind and sound insulation with our self-produced wide seals.",
         tag: "13.73mm Custom Made"
       },
       s2: {
-        title: "PVC Window Repair",
-        description: "We restore all brands of PVC windows that do not close or rub."
+        title: "PVC Window Repair & Adjustment",
+        description: "We restore all brands of PVC windows that do not close or rub to their first-day performance."
       },
       s3: {
-        title: "Wooden Door & Window",
+        title: "Wooden Window Repair",
         description: "Special seal application, putty and maintenance for old type wooden frames."
       },
       s4: {
-        title: "Fly Screen & Glass Balcony",
-        description: "Torn wire replacement, wheel repair or custom manufacturing."
+        title: "Glass Balcony Seal Replacement",
+        description: "We renew the yellowed, broken or leaking seals of your glass balconies."
       },
       activeServiceBtn: "We currently provide active service throughout Ankara."
     },
@@ -205,8 +207,7 @@ export const translations = {
         badDesc: "Thin and non-durable structure",
         badList: ["Lets sound in", "Hardens quickly", "Does not stop wind"],
         goodLabel: "SPECIAL PRODUCTION",
-        // BURASI GÜNCELLENDİ: "Asaydın Seal" -> "Custom Production Wide Seal"
-        goodTitle: "Custom Production Wide Seal", 
+        goodTitle: "Custom Wide Seal",
         goodDesc: "Extra wide and flexible",
         goodList: ["100% Insulation", "Cuts Noise", "Long Lasting"]
       }

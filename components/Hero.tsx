@@ -1,21 +1,19 @@
-"use client"; // Çeviri için bu satır ŞART
+"use client";
 
 import React from "react";
 import Image from "next/image";
-import { useLanguage } from "@/context/LanguageContext"; // Çeviri kutusunu çağırdık
+import { useLanguage } from "@/context/LanguageContext"; 
 
 export default function Hero() {
-  const { t } = useLanguage(); // Dili ve çevirileri al
+  const { t } = useLanguage(); 
 
-  // İstatistikleri çeviriden çekiyoruz
   const stats = [
-    { label: t.hero.stats.exp, value: t.hero.stats.expValue }, // <--- Burayı düzelttik
-    { label: t.hero.stats.guarantee, value: "%100" }, // Bunlar sayı olduğu için kalabilir veya istersen çeviriye ekleyebilirsin
+    { label: t.hero.stats.exp, value: t.hero.stats.expValue }, 
+    { label: t.hero.stats.guarantee, value: "%100" }, 
     { label: t.hero.stats.service, value: "7/24" },
   ];
 
   return (
-    // pt-32 ekledik ki Header'ın altında kalmasın
     <section className="relative overflow-hidden bg-white pt-32 pb-20 lg:pt-48 lg:pb-32 text-gray-900">
       {/* Arka Plan Dekoratif Efektler */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -37,15 +35,15 @@ export default function Hero() {
             {t.hero.badge}
           </div>
 
-          {/* Başlık - Çeviriye Bağlandı */}
+          {/* Başlık (H1) - Çeviriden geliyor ama SEO yapısı korundu */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.1]">
             {t.hero.titleLine1} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
-              {t.hero.titleLine2}
+             {t.hero.titleLine2}
             </span>
           </h1>
 
-          {/* Açıklama - Çeviriye Bağlandı */}
+          {/* Açıklama */}
           <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
             {t.hero.description}
           </p>
@@ -90,13 +88,14 @@ export default function Hero() {
                 src="/logo.png"
                 width={200}
                 height={100}
-                alt="Asaydın Yapı Logo"
+                alt="Asaydın Yapı - Ankara Pimapen Tamiri" 
                 className="object-contain h-auto"
                 priority
               />
             </div>
 
             <div className="space-y-4">
+              {/* Madde 1 */}
               <div className="flex items-start gap-3">
                 <div className="mt-1 bg-green-100 p-1 rounded-full">
                    <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
@@ -107,6 +106,7 @@ export default function Hero() {
                 </div>
               </div>
               
+              {/* Madde 2 */}
               <div className="flex items-start gap-3">
                 <div className="mt-1 bg-green-100 p-1 rounded-full">
                    <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
@@ -117,6 +117,7 @@ export default function Hero() {
                 </div>
               </div>
 
+              {/* Madde 3 */}
               <div className="flex items-start gap-3">
                 <div className="mt-1 bg-green-100 p-1 rounded-full">
                    <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
