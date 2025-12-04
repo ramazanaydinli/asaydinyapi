@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Asaydın Yapı | Window Repair, Seal Replacement & Insect Screens in Ankara",
-    description: "Professional window repair, 100% insulated seal replacement, insect screens and glass balcony systems in Ankara. 40 years of experience. English-speaking service. Call now: +90 532 413 06 94",
+    description: "Professional window repair, 100% insulated seal replacement, insect screens and glass balcony systems in Ankara. 40 years of experience. English-speaking service. Call now: +90 535 615 84 54.",
     keywords: [
         "window repair ankara",
         "double glazing repair ankara",

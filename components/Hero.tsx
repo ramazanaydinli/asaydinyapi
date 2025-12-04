@@ -51,7 +51,7 @@ export default function Hero() {
           {/* Butonlar */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
             <a
-              href="tel:+905324130694"
+              href="tel:+905356158454"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-orange-600 text-white px-8 py-4 font-bold shadow-lg shadow-orange-600/20 hover:bg-orange-700 hover:scale-105 transform transition-all duration-300"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -132,8 +132,8 @@ export default function Hero() {
             <div className="mt-8 bg-gray-900 rounded-2xl p-4 text-center text-white relative overflow-hidden group cursor-pointer">
                <div className="absolute inset-0 bg-orange-600/10 group-hover:bg-orange-600/20 transition-colors" />
                <p className="text-xs uppercase tracking-widest text-gray-400 mb-1">{t.hero.card.emergency}</p>
-               <a href="tel:+905324130694" className="block text-2xl font-bold tracking-tight hover:text-orange-500 transition-colors">
-                 0532 413 06 94
+               <a href="tel:+905356158454" className="block text-2xl font-bold tracking-tight hover:text-orange-500 transition-colors">
+                 0535 615 84 54
                </a>
             </div>
 

@@ -94,7 +94,7 @@ export default function Header() {
           </div>
 
           <a
-            href="tel:+905324130694"
+            href="tel:+905356158454"
             className="bg-gray-900 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20"
           >
             {t.header.callBtn || "Hemen Ara"}
@@ -145,7 +145,7 @@ export default function Header() {
             </button>
           </div>
 
-          <a href="tel:+905324130694" className="bg-orange-600 text-white text-center py-3 rounded-xl font-bold mt-2">
+          <a href="tel:+905356158454" className="bg-orange-600 text-white text-center py-3 rounded-xl font-bold mt-2">
             {t.header.callBtn || "Hemen Ara"}
           </a>
         </div>

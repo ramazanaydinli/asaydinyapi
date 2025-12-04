@@ -22,7 +22,7 @@ export default function FloatingWhatsapp() {
 
   return (
     <a
-      href={`https://wa.me/905324130694?text=${encodedMessage}`} // Dinamik mesaj
+      href={`https://wa.me/905356158454?text=${encodedMessage}`} // Dinamik mesaj
       onClick={handleConversion} // Tıklanınca dönüşüm kodunu çalıştırır
       target="_blank"
       rel="noopener noreferrer"
